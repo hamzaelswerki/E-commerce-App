@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        tools:context=".view.fragments.Login1Fragment">
+
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/textViewLoginStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginLeft="53dp"
+            android:text="@string/Username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/PhoneNumber"
+
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/edUserName" />
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:text="@string/Address"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/edMail" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08481532" />
+
+        <EditText
+            android:id="@+id/edUserName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+
+            android:background="@drawable/ic_bc_login"
+            android:ems="10"
+            android:hint="@string/TypeyourUsername"
+            android:inputType="textPersonName"
+            android:paddingStart="23dp"
+            android:paddingEnd="23dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/edMail"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+
+
+            android:layout_marginTop="16dp"
+            android:autofillHints=""
+            android:background="@drawable/ic_bc_login"
+            android:ems="10"
+            android:hint="@string/PhoneNumber"
+            android:inputType="textPersonName"
+            android:paddingStart="23dp"
+
+            android:paddingEnd="23dp"
+            app:layout_constraintEnd_toEndOf="@+id/edUserName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edUserName"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <EditText
+            android:id="@+id/edAddress"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+
+
+            android:layout_marginTop="28dp"
+
+            android:autofillHints=""
+            android:background="@drawable/ic_bc_dress"
+            android:ems="10"
+            android:gravity="top"
+
+            android:hint="@string/YourAddress"
+            android:inputType="textPersonName"
+            android:paddingStart="23dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="23dp"
+            app:layout_constraintStart_toStartOf="@+id/edMail"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signUp"
+            style="@style/ButtonLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="38dp"
+            android:text="@string/Edite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edAddress" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FA697C"
+            android:elevation="2dp"
+
+            android:indeterminateTint="@color/white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/signUp"
+            app:layout_constraintEnd_toEndOf="@+id/signUp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signUp"
+            app:layout_constraintTop_toBottomOf="@+id/edAddress"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

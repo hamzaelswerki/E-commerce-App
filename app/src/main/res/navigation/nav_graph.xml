@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_login1Fragment"
+            app:destination="@id/login1Fragment"
+            app:enterAnim="@anim/fromleft"
+            app:exitAnim="@anim/out_to_right" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login1Fragment"
+        android:name="com.example.ecommercekotlin.view.fragments.Login1Fragment"
+        android:label="fragment_login1"
+        tools:layout="@layout/fragment_login1"
+        >
+        <action
+            android:id="@+id/action_login1Fragment_to_registerFragment2"
+            app:destination="@id/registerFragment2"
+            app:enterAnim="@anim/fromleft"
+            app:exitAnim="@anim/out_to_right" />
+        <action
+            android:id="@+id/action_login1Fragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment2"
+        tools:layout="@layout/fragment_register"
+
+        android:name="com.example.ecommercekotlin.view.fragments.RegisterFragment"        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment2_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_on_boarding"
+
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.OnBoardingFragment"
+        android:label="OnBoardingFragment" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_productsCategoryFragment"
+            app:destination="@id/productsCategoryFragment"
+            app:enterAnim="@anim/fromleft"
+            app:exitAnim="@anim/out_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/fromleft"
+            app:exitAnim="@anim/out_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartsFragment"
+            app:destination="@id/cartsFragment"
+            app:enterAnim="@anim/fromleft"
+            app:popEnterAnim="@anim/out_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsCategoryFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.ProductsCategoryFragment"
+        android:label="fragment_products_category"
+        tools:layout="@layout/fragment_products_category"
+
+    >
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_productsCategoryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/fromleft"
+            app:exitAnim="@anim/out_to_right" />
+        <argument
+            android:name="catName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productsCategoryFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_productsCategoryFragment_to_cartsFragment"
+            app:destination="@id/cartsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        tools:layout="@layout/fragment_details"
+        android:name="com.example.ecommercekotlin.view.fragments.DetailsFragment"
+        android:label="DetailsFragment" >
+        <argument android:name="product"
+            app:argType="com.example.ecommercekotlin.model.entity.Product"/>
+        <action
+            android:id="@+id/action_detailsFragment_to_cartsFragment"
+            app:destination="@id/cartsFragment"
+            app:enterAnim="@anim/fromleft"
+            app:exitAnim="@anim/out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartsFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.CartsFragment"
+        android:label="CartsFragment" >
+        <action
+            android:id="@+id/action_cartsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_bookMarkFragment"
+            app:destination="@id/bookMarkFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editeUserFragment"
+            app:destination="@id/editeUserFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookMarkFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.BookMarkFragment"
+        android:label="BookMarkFragment" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.OrderFragment"
+        android:label="OrderFragment" >
+        <action
+            android:id="@+id/action_orderFragment_to_productsInOrderFragment"
+            app:destination="@id/productsInOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsInOrderFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.ProductsInOrderFragment"
+        android:label="ProductsInOrderFragment" >
+        <argument android:name="ProductOrder"
+            app:argType="com.example.ecommercekotlin.model.entity.OrderProduct[]"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/editeUserFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.EditeUserFragment"
+        android:label="EditeUserFragment" >
+        <action
+            android:id="@+id/action_editeUserFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.ecommercekotlin.view.fragments.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+</navigation>
